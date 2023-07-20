@@ -10,6 +10,7 @@ import {mongooseConnect} from "@/lib/mongoose";
 import {getServerSession} from "next-auth";
 import {authOptions} from "@/pages/api/auth/[...nextauth]";
 import {WishedProduct} from "@/models/WishedProduct";
+import Footer from "@/components/Footer";
 
 const CategoryGrid = styled.div`
   display: grid;
@@ -56,7 +57,7 @@ export default function CategoriesPage({mainCategories,categoriesProducts,wished
       <Header />
       <Center>
         {mainCategories.map(cat => (
-          <CategoryWrapper>
+          <CategoryWrapper key={mainCategories}>
             <CategoryTitle>
               <h2>{cat.name}</h2>
               <div>
@@ -65,7 +66,7 @@ export default function CategoriesPage({mainCategories,categoriesProducts,wished
             </CategoryTitle>
             <CategoryGrid>
               {categoriesProducts[cat._id].map((p,index) => (
-                <RevealWrapper delay={index*50}>
+                <RevealWrapper delay={index*50} key={categoriesProducts}>
                   <ProductBox {...p} wished={wishedProducts.includes(p._id)} />
                 </RevealWrapper>
               ))}
@@ -78,6 +79,7 @@ export default function CategoriesPage({mainCategories,categoriesProducts,wished
           </CategoryWrapper>
         ))}
       </Center>
+      <Footer/>
     </>
   );
 }

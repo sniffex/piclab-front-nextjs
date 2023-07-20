@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import NewProducts from "@/components/NewProducts";
 import { mongooseConnect } from "@/lib/mongoose";
 import {Product} from "@/models/Product";
+import Footer from "@/components/Footer";
 
 export default function HomePage({product, newProducts}) {
   return (
@@ -10,6 +11,7 @@ export default function HomePage({product, newProducts}) {
       <Header/>
       <Featured product={product}/>
       <NewProducts products={newProducts}/>
+      <Footer/>
     </div>
   )
 }
