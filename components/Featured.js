@@ -7,6 +7,8 @@ import FlyingButton from "@/components/FlyingButton";
 import {RevealWrapper} from 'next-reveal'
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
+import Image from "next/image";
+
 const Bg = styled.div`
   background-color: #222;
   color:#fff;
@@ -97,7 +99,9 @@ export default function Featured({product}) {
             </div>
           </Column>
           <Column>
-            <img src="https://dawid-next-ecommerce.s3.amazonaws.com/1679151719649.png" alt=""/>
+          {product.images.map((image, index) => (
+                <img key={index} src={image}/>
+                ))}
           </Column>
         </ColumnsWrapper>
       </Center>
