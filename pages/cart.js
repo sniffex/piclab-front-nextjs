@@ -177,7 +177,7 @@ export default function CartPage() {
           <RevealWrapper delay={0}>
             <Box>
               <h2>Cart</h2>
-              {!cartProducts?.length && (
+              {!cartProducts?.length < 1 && (
                 <div>Your cart is empty</div>
               )}
               {products?.length > 0 && (

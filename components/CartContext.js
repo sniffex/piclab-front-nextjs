@@ -18,15 +18,21 @@ export function CartContextProvider({children}) {
   function addProduct(productId) {
     setCartProducts(prev => [...prev,productId]);
   }
+  // function removeProduct(productId) {
+  //   setCartProducts(prev => {
+  //     const pos = prev.indexOf(productId);
+  //     if (pos !== -1) {
+  //       return prev.filter((value,index) => index !== pos);
+  //     }
+  //     return prev;
+  //   });
+  // }
   function removeProduct(productId) {
     setCartProducts(prev => {
-      const pos = prev.indexOf(productId);
-      if (pos !== -1) {
-        return prev.filter((value,index) => index !== pos);
-      }
-      return prev;
+      return prev.filter((value) => value !== productId);
     });
   }
+  
   function clearCart() {
     setCartProducts([]);
   }
