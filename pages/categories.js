@@ -54,7 +54,9 @@ const ShowAllSquare = styled(Link)`
 export default function CategoriesPage({mainCategories,categoriesProducts,wishedProducts=[]}) {
   return (
     <>
-      <Header />
+    <div className="flex flex-col min-h-screen">
+      <Header/>
+      <main className="flex-grow">
       <Center>
         {mainCategories.map(cat => (
           <CategoryWrapper key={mainCategories}>
@@ -79,7 +81,9 @@ export default function CategoriesPage({mainCategories,categoriesProducts,wished
           </CategoryWrapper>
         ))}
       </Center>
+      </main>
       <Footer/>
+    </div>
     </>
   );
 }

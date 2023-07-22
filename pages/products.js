@@ -13,12 +13,18 @@ import Footer from "@/components/Footer";
 export default function ProductsPage({products,wishedProducts}) {
   return (
     <>
-      <Header />
+    <div className="flex flex-col min-h-screen">
+      <Header/>
+      <main className="flex-grow mt-5">
       <Center>
+        <div className="mb-5">
         <Title>All products</Title>
+        </div>
         <ProductsGrid products={products} wishedProducts={wishedProducts} />
       </Center>
+      </main>
       <Footer/>
+    </div>
     </>
   );
 }

@@ -7,10 +7,12 @@ import Footer from "@/components/Footer";
 
 export default function HomePage({product, newProducts}) {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header/>
+      <main className="flex-grow">
       <Featured product={product}/>
       <NewProducts products={newProducts}/>
+      </main>
       <Footer/>
     </div>
   )

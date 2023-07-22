@@ -11,7 +11,7 @@ const About = () => {
           <p class="text-xl mt-6 text-gray-600">PICLAB is the quick and convenient ways to access to other photographer around the world and you can earn money from the selling wonder photo or giving other photographer advice services.</p>
         </div>
         <div class="lg:w-8/12">
-        <img src="https://dawid-next-ecommerce.s3.amazonaws.com/1679151719649.png" alt="" loading="lazy" className="rounded-xl"/>
+        <img src="https://nextjs-piclab.s3.amazonaws.com/1689870334688.webp" alt="" className="rounded-xl" width="1000"/>
         </div>
       </div>
   </div>

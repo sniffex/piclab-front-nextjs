@@ -171,7 +171,9 @@ export default function CartPage() {
   }
   return (
     <>
-      <Header />
+    <div className="flex flex-col min-h-screen">
+      <Header/>
+      <main className="flex-grow">
       <Center>
         <ColumnsWrapper>
           <RevealWrapper delay={0}>
@@ -274,7 +276,9 @@ export default function CartPage() {
           )}
         </ColumnsWrapper>
       </Center>
+      </main>
       <Footer/>
+    </div>
     </>
   );
 }

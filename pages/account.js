@@ -95,8 +95,10 @@ export default function AccountPage() {
   }
   return (
     <>
-      <Header />
-      <Center>
+    <div className="flex flex-col min-h-screen">
+      <Header/>
+    <main className="flex-grow">
+    <Center>
         <ColsWrapper>
           <div>
             <RevealWrapper delay={0}>
@@ -211,7 +213,9 @@ export default function AccountPage() {
           </div> */}
         </ColsWrapper>
       </Center>
-      <Footer/>
+    </main>
+    <Footer/>
+    </div>
     </>
   );
 }
