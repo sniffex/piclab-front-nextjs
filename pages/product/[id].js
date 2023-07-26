@@ -35,7 +35,7 @@ export default function ProductPage({product}) {
       <Center>
         <ColWrapper>
           <WhiteBox>
-            <ProductImages images={product.images} />
+            <ProductImages images={product.images}  />
           </WhiteBox>
           <div>
             <Title>{product.title}</Title>
