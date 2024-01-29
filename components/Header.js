@@ -96,8 +96,9 @@ export default function Header() {
             <NavLink href={'/products'}>All products</NavLink>
             <NavLink href={'/categories'}>Categories</NavLink>
             <NavLink href={'/account'}>Account</NavLink>
-            <NavLink href={'/cart'}>Cart ({cartProducts.length - 0 })</NavLink>
+            <NavLink href={'/cart'}>Cart ({cartProducts.length })</NavLink>
             <NavLink href={'/aboutus'}>About us</NavLink>
+            <NavLink href={'/account'}>Account</NavLink>
           </StyledNav>
           <SideIcons>
             <Link href={'/search'}><SearchIcon /></Link>
