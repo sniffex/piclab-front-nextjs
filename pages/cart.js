@@ -179,7 +179,7 @@ export default function CartPage() {
           <RevealWrapper delay={0}>
             <Box>
               <h2>Cart</h2>
-              {!cartProducts?.length < 1 && (
+              {cartProducts?.length == 0 && (
                 <div>Your cart is empty</div>
               )}
               {products?.length > 0 && (
@@ -192,7 +192,7 @@ export default function CartPage() {
                   </tr>
                   </thead>
                   <tbody>
-                  {products.map(product => (
+                  {/* {products.map(product => (
                     <tr key={products}>
                       <ProductInfoCell>
                         <ProductImageBox>
@@ -213,7 +213,36 @@ export default function CartPage() {
                         ${cartProducts.filter(id => id === product._id).length * product.price}
                       </td>
                     </tr>
-                  ))}
+                  ))} */}
+                  {products.map(product => {
+                    const quantity = cartProducts.filter(id => id === product._id).length;
+                    // Render the product only if its quantity is greater than 0
+                    if (quantity > 0) {
+                      return (
+                        <tr key={product._id}>
+                          <ProductInfoCell>
+                        <ProductImageBox>
+                          <img src={product.images[0]} alt=""/>
+                        </ProductImageBox>
+                        {product.title}
+                      </ProductInfoCell>
+                          <td>{product.title}</td>
+                          <td>
+                            {/* Quantity controls */}
+                            <Button onClick={() => lessOfThisProduct(product._id)}>-</Button>
+                            <QuantityLabel>{quantity}</QuantityLabel>
+                            <Button onClick={() => moreOfThisProduct(product._id)}>+</Button>
+                          </td>
+                          {/* Total price for this product */}
+                          <td>${quantity * product.price}</td>
+                        </tr>
+                      );
+                    } else {
+                      // If quantity is 0, do not render this product
+                      return null;
+                    }
+                  })}
+
                   <tr className="subtotal">
                     <td colSpan={2}>Products</td>
                     <td>${productsTotal}</td>
